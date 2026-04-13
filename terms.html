@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Terms & Conditions | East Coast Inflate-a-Palooza</title>
-  <meta name="description" content="Terms and Conditions, liability waiver, and assumption of risk policy for East Coast Inflate-a-Palooza.">
+  <meta name="description" content="Terms and Conditions, assumption of risk, and liability policy for East Coast Inflate-a-Palooza. Governed by the laws of Nova Scotia, Canada.">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <style>
@@ -13,18 +13,23 @@
       padding: 140px 0 80px;
       text-align: center;
       color: var(--white);
+      position: relative;
+      overflow: hidden;
     }
-    .terms-hero h1 {
-      font-size: clamp(2rem, 4vw, 3rem);
-      margin-bottom: 16px;
+    .terms-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 70% 20%, rgba(255,215,0,0.15) 0%, transparent 60%),
+                  radial-gradient(ellipse at 20% 80%, rgba(255,71,87,0.1) 0%, transparent 50%);
     }
-    .terms-hero p {
-      color: rgba(255,255,255,0.85);
-      font-size: 1.05rem;
-    }
+    .terms-hero > * { position: relative; z-index: 1; }
+    .terms-hero h1 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 16px; }
+    .terms-hero p { color: rgba(255,255,255,0.85); font-size: 1.05rem; max-width: 600px; margin: 0 auto; }
+
     .terms-body {
       padding: 80px 0 100px;
-      background: var(--white);
+      background: var(--gray-50);
     }
     .terms-card {
       background: var(--white);
@@ -33,21 +38,52 @@
       padding: 56px 64px;
       box-shadow: var(--shadow-md);
     }
+    .terms-card .meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 32px;
+    }
+    .terms-card .meta-tag {
+      display: inline-block;
+      background: var(--blue-sky);
+      color: var(--blue-deep);
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 0.8rem;
+      padding: 5px 14px;
+      border-radius: 50px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
     .terms-card h2 {
-      font-size: 1.4rem;
+      font-size: 1.2rem;
       color: var(--blue-deep);
       margin: 40px 0 12px;
-      padding-bottom: 8px;
+      padding-bottom: 10px;
       border-bottom: 2px solid var(--blue-sky);
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
-    .terms-card h2:first-of-type {
-      margin-top: 0;
+    .terms-card h2 span.sec-num {
+      background: var(--gradient-hero);
+      color: var(--white);
+      font-size: 0.75rem;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
     }
+    .terms-card h2:first-of-type { margin-top: 0; }
     .terms-card p,
     .terms-card li {
       color: var(--gray-600);
-      line-height: 1.85;
-      font-size: 1rem;
+      line-height: 1.9;
+      font-size: 0.975rem;
       margin-bottom: 12px;
     }
     .terms-card ul {
@@ -55,34 +91,37 @@
       padding-left: 24px;
       margin-bottom: 16px;
     }
-    .terms-card ul li {
-      margin-bottom: 8px;
+    .terms-card ul li { margin-bottom: 8px; }
+
+    .alert-box {
+      border-radius: 14px;
+      padding: 20px 24px;
+      margin: 20px 0;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
     }
-    .terms-card .effective-date {
-      display: inline-block;
-      background: var(--blue-sky);
-      color: var(--blue-deep);
-      font-family: var(--font-heading);
-      font-weight: 700;
-      font-size: 0.85rem;
-      padding: 6px 16px;
-      border-radius: 50px;
-      margin-bottom: 32px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
-    .terms-card .warning-box {
+    .alert-box i { font-size: 1.2rem; flex-shrink: 0; margin-top: 2px; }
+    .alert-box p { margin: 0; line-height: 1.6; font-size: 0.95rem; }
+
+    .alert-warning {
       background: #FFF8E1;
       border-left: 5px solid var(--yellow-warm);
-      border-radius: 12px;
-      padding: 20px 24px;
-      margin: 24px 0;
     }
-    .terms-card .warning-box p {
-      color: #7B5800;
-      font-weight: 600;
-      margin: 0;
+    .alert-warning i, .alert-warning p { color: #7B5800; }
+
+    .alert-info {
+      background: var(--blue-sky);
+      border-left: 5px solid var(--blue);
     }
+    .alert-info i, .alert-info p { color: var(--blue-deep); }
+
+    .alert-red {
+      background: var(--red-light);
+      border-left: 5px solid var(--red);
+    }
+    .alert-red i, .alert-red p { color: #B71C1C; }
+
     .back-link {
       display: inline-flex;
       align-items: center;
@@ -93,14 +132,43 @@
       margin-bottom: 40px;
       transition: var(--transition);
     }
-    .back-link:hover {
-      color: var(--blue-deep);
-      gap: 12px;
+    .back-link:hover { color: var(--blue-deep); gap: 12px; }
+
+    .parties-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0 24px;
+      font-size: 0.9rem;
     }
+    .parties-table th {
+      background: var(--blue-sky);
+      color: var(--blue-deep);
+      font-family: var(--font-heading);
+      font-weight: 700;
+      padding: 10px 16px;
+      text-align: left;
+      border: 1px solid var(--gray-200);
+    }
+    .parties-table td {
+      padding: 10px 16px;
+      border: 1px solid var(--gray-200);
+      color: var(--gray-600);
+      vertical-align: top;
+    }
+    .parties-table tr:nth-child(even) td { background: var(--gray-50); }
+
+    .footer-note {
+      margin-top: 40px;
+      padding-top: 32px;
+      border-top: 2px solid var(--gray-100);
+      color: var(--gray-400);
+      font-size: 0.85rem;
+      line-height: 1.7;
+    }
+
     @media (max-width: 768px) {
-      .terms-card {
-        padding: 32px 24px;
-      }
+      .terms-card { padding: 32px 20px; }
+      .parties-table { font-size: 0.8rem; }
     }
   </style>
 </head>
@@ -123,9 +191,7 @@
         <a href="https://www.eventbrite.ca/e/east-coast-inflate-a-palooza-x-stampede-tickets-1689122483819?aff=oddtdtcreator" target="_blank" class="btn btn-primary">Buy Tickets</a>
       </div>
       <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-        <span></span>
-        <span></span>
-        <span></span>
+        <span></span><span></span><span></span>
       </button>
     </div>
   </nav>
@@ -133,9 +199,9 @@
   <!-- ===== HERO ===== -->
   <div class="terms-hero">
     <div class="container">
-      <p class="section-subtitle" style="color:rgba(255,255,255,0.75);">Legal</p>
+      <p class="section-subtitle" style="color:rgba(255,255,255,0.7);">Legal</p>
       <h1>Terms &amp; Conditions</h1>
-      <p>Please read the following carefully before attending East Coast Inflate-a-Palooza.</p>
+      <p>Please read the following carefully before attending or purchasing tickets to East Coast Inflate-a-Palooza.</p>
     </div>
   </div>
 
@@ -147,75 +213,194 @@
       </a>
 
       <div class="terms-card">
-        <span class="effective-date">Effective: August 21, 2026</span>
 
-        <div class="warning-box">
-          <p><i class="fas fa-exclamation-triangle" style="margin-right:8px;"></i>
-            By purchasing a ticket to or attending East Coast Inflate-a-Palooza, you acknowledge that you have read, understood, and agreed to all terms and conditions set forth below.
-          </p>
+        <div class="meta-row">
+          <span class="meta-tag">Effective: August 21, 2026</span>
+          <span class="meta-tag">Governed by: Nova Scotia Law</span>
+          <span class="meta-tag">Last Updated: April 2026</span>
         </div>
 
-        <h2>1. Parties</h2>
-        <p>These Terms and Conditions ("Agreement") govern attendance at <strong>East Coast Inflate-a-Palooza</strong> ("the Event"), organized and operated by <strong>Giant Promotions</strong> and <strong>HRM Mascots &amp; Giant Promotions</strong> (collectively "the Organizers," "we," "us," or "our"). References to "East Coast Inflate-a-Palooza," "EC Palooza," the Organizers, or any associated businesses shall be interpreted as including all officers, directors, employees, volunteers, contractors, sponsors, vendors, partners, agents, and successors.</p>
+        <div class="alert-warning">
+          <i class="fas fa-exclamation-triangle"></i>
+          <p><strong>Important Notice:</strong> By purchasing a ticket to, registering for, or attending East Coast Inflate-a-Palooza (the "Event"), you confirm that you have read, understood, and agree to be legally bound by all of the Terms and Conditions set out below. If you do not agree, you must not attend the Event. These Terms constitute a legally binding agreement under the laws of Nova Scotia, Canada.</p>
+        </div>
 
-        <h2>2. Voluntary Participation &amp; Assumption of Risk</h2>
-        <p>Participation in the activities offered at East Coast Inflate-a-Palooza, including but not limited to inflatable attractions, obstacle courses, rock climbing walls, mechanical rides, carnival games, and all other activities (collectively "Activities"), is <strong>entirely voluntary</strong>.</p>
-        <p>By attending the Event, you expressly acknowledge and agree that:</p>
+        <div class="alert-info" style="margin-top:16px;">
+          <i class="fas fa-balance-scale"></i>
+          <p><strong>Recommendation:</strong> These Terms and Conditions are drafted in good faith to reflect applicable Nova Scotia law. The Organizers recommend that this document be reviewed by a qualified Nova Scotia lawyer, particularly regarding coverage, insurance, and any updates to applicable legislation prior to each Event year.</p>
+        </div>
+
+        <!-- SECTION 1 -->
+        <h2><span class="sec-num">1</span> Definitions &amp; Parties</h2>
+        <p>In these Terms and Conditions, the following definitions apply:</p>
+        <table class="parties-table">
+          <thead>
+            <tr>
+              <th>Term</th>
+              <th>Meaning</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>"Event"</strong></td>
+              <td>East Coast Inflate-a-Palooza, held at Garrison Grounds, Halifax, Nova Scotia, August 21–23, 2026, and any future editions thereof.</td>
+            </tr>
+            <tr>
+              <td><strong>"Organizers"</strong></td>
+              <td><strong>Giant Promotions Limited</strong> and <strong>HRM Mascots &amp; Inflatables (Party Heroes Entertainment Limited)</strong>, jointly and severally, including all of their respective officers, directors, employees, agents, volunteers, contractors, successors, and assigns.</td>
+            </tr>
+            <tr>
+              <td><strong>"Released Parties"</strong></td>
+              <td>The Organizers, together with any co-sponsors, partners, venue operators, equipment suppliers, food vendors, and any other businesses or individuals associated with the production or operation of the Event.</td>
+            </tr>
+            <tr>
+              <td><strong>"Participant"</strong></td>
+              <td>Any person who attends the Event, including ticket holders, guests, spectators, and all minors under their care.</td>
+            </tr>
+            <tr>
+              <td><strong>"Activities"</strong></td>
+              <td>All inflatable attractions, obstacle courses, rock climbing walls, mechanical rides, slides, bouncy castles, carnival games, train rides, entertainment, and any other activities offered at the Event.</td>
+            </tr>
+            <tr>
+              <td><strong>"You" / "your"</strong></td>
+              <td>The Participant and, where applicable, the parent or legal guardian of a minor Participant.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- SECTION 2 -->
+        <h2><span class="sec-num">2</span> Voluntary Participation &amp; Inherent Risks</h2>
+        <p>Participation in the Activities is <strong>entirely voluntary</strong>. You acknowledge and agree that the Activities involve physical exertion and carry <strong>inherent risks of personal injury, property damage, or death</strong> that cannot be fully eliminated, even when reasonable safety measures are in place.</p>
+        <p>Inherent risks include, without limitation:</p>
         <ul>
-          <li>Physical activities, including the use of inflatables and other attractions, involve <strong>inherent risks of injury</strong>, including minor, serious, or fatal injury.</li>
-          <li>Risks include, without limitation: falls, collisions with other participants or equipment, overexertion, impact injuries, allergic reactions, and weather-related incidents.</li>
-          <li>You <strong>voluntarily assume full responsibility</strong> for all risks of loss, property damage, or personal injury (including death) that may be sustained as a result of participating in any Event activities.</li>
-          <li>All participants play and participate <strong>entirely at their own risk</strong>.</li>
+          <li>Falls, slips, collisions with other participants or structures;</li>
+          <li>Impact injuries from inflatable surfaces, walls, or equipment;</li>
+          <li>Overexertion, fatigue, or dehydration;</li>
+          <li>Weather-related incidents including heat, sun exposure, or sudden storms;</li>
+          <li>Injuries arising from misuse of equipment or failure to follow posted rules;</li>
+          <li>Contact with other Participants, including children.</li>
+        </ul>
+        <p>By attending the Event, you <strong>voluntarily assume full and personal responsibility</strong> for all such risks, and you acknowledge that you participate at your own risk.</p>
+
+        <!-- SECTION 3 -->
+        <h2><span class="sec-num">3</span> Release of Liability &amp; Waiver — INCLUDING NEGLIGENCE</h2>
+
+        <div class="alert-red">
+          <i class="fas fa-exclamation-circle"></i>
+          <p><strong>Read Carefully — This Section Waives Important Legal Rights.</strong> By attending the Event, you are agreeing to give up your right to sue the Released Parties, including for their negligence.</p>
+        </div>
+
+        <p>To the fullest extent permitted by applicable law, you, for yourself and on behalf of your heirs, executors, administrators, successors, and assigns, hereby <strong>release, waive, discharge, and covenant not to sue</strong> the Released Parties from any and all claims, demands, losses, liabilities, damages, costs, or causes of action of any nature whatsoever — including those arising from the <strong>negligence</strong> of the Released Parties — which arise out of or in any way relate to:</p>
+        <ul>
+          <li>Your participation in any Activity at the Event;</li>
+          <li>Your presence at Garrison Grounds or any Event venue;</li>
+          <li>Any personal injury (including death), illness, or loss of or damage to property;</li>
+          <li>The conduct, acts, or omissions of any Released Party, including acts of <strong>negligence</strong>.</li>
+        </ul>
+        <p>You specifically acknowledge that this waiver and release is intended to include claims arising from the <strong>negligence</strong> of the Released Parties, to the extent permitted by law. This release does <strong>not</strong> apply to claims arising from the gross negligence, recklessness, or willful misconduct of the Released Parties, as such claims may not be excluded by contract under applicable Nova Scotia law.</p>
+        <p>This waiver is intended to comply with the <em>Occupiers' Liability Act</em>, RSNS 1989, c 322, and represents a modification of the standard of care owed to Participants in accordance with that Act, to the extent such modification is legally permissible.</p>
+
+        <!-- SECTION 4 -->
+        <h2><span class="sec-num">4</span> Indemnification</h2>
+        <p>You agree to <strong>indemnify, defend, and hold harmless</strong> the Released Parties from and against any and all third-party claims, demands, proceedings, damages, liabilities, costs, and expenses (including reasonable legal fees on a solicitor-and-own-client basis) arising out of or relating to:</p>
+        <ul>
+          <li>Your conduct or the conduct of any minor in your care at the Event;</li>
+          <li>Your breach of these Terms and Conditions;</li>
+          <li>Any injury to a third party caused by your actions or the actions of a minor in your care;</li>
+          <li>Any property damage caused by you or a minor in your care.</li>
         </ul>
 
-        <h2>3. Release of Liability &amp; Waiver of Claims</h2>
-        <p>To the fullest extent permitted by applicable law, you, on behalf of yourself and any minor children or dependents in your care, hereby <strong>release, waive, discharge, and covenant not to sue</strong> East Coast Inflate-a-Palooza, Giant Promotions, HRM Mascots &amp; Giant Promotions, and any and all of their associated businesses, officers, directors, employees, volunteers, agents, contractors, sponsors, and assigns (collectively "Released Parties") from any and all claims, demands, damages, losses, costs, or expenses of any kind, whether arising from negligence or otherwise, which arise out of or relate to:</p>
+        <!-- SECTION 5 -->
+        <h2><span class="sec-num">5</span> Minors — Informed Consent &amp; Parental Responsibility</h2>
+
+        <div class="alert-info">
+          <i class="fas fa-info-circle"></i>
+          <p><strong>Legal Notice:</strong> Under Canadian law, parents and guardians generally cannot waive a minor child's independent right to bring a tort claim. The provisions below reflect this limitation and are intended to operate as informed consent and acknowledgment of risk, not as a contractual bar to a minor's future claims.</p>
+        </div>
+
+        <p>If you are the parent or legal guardian of a minor (under 19 years of age in Nova Scotia) attending the Event, you agree to the following:</p>
         <ul>
-          <li>Participation in any Event activity;</li>
-          <li>Attendance at the Event venue (Garrison Grounds, Halifax, NS);</li>
-          <li>Any injury, illness, death, or property damage sustained on or off Event premises in connection with the Event;</li>
-          <li>Any act or omission of the Released Parties.</li>
+          <li>You have read and understood these Terms and Conditions in their entirety;</li>
+          <li>You <strong>consent</strong> to your minor child's participation in the Activities and acknowledge all risks described herein on the minor's behalf;</li>
+          <li>You accept <strong>personal responsibility</strong> for ensuring your minor child complies with all safety rules and staff instructions at all times;</li>
+          <li>Children aged 12 and under must be <strong>accompanied and actively supervised</strong> by a responsible adult at all times (maximum 4 children per adult);</li>
+          <li>You will not allow any minor in your care to participate in any Activity for which they do not meet the posted height, weight, age, or physical requirements;</li>
+          <li>You acknowledge that the Organizers' ability to supervise individual children is limited and that the primary duty of supervision rests with you.</li>
         </ul>
-        <p>You agree that you <strong>will not bring any legal action or claim</strong> against East Coast Inflate-a-Palooza, Giant Promotions, HRM Mascots &amp; Giant Promotions, or any associated businesses for any damages, injuries, losses, or deaths arising from your attendance at or participation in the Event.</p>
+        <p>Nothing in this section shall be construed as a waiver of any minor's independent legal rights. The minor's personal release of claims, to the extent enforceable, is limited to the extent permitted by applicable law.</p>
 
-        <h2>4. Indemnification</h2>
-        <p>You agree to <strong>indemnify, defend, and hold harmless</strong> the Released Parties from and against any and all third-party claims, liabilities, damages, costs, and expenses (including reasonable legal fees) arising out of or related to your conduct, your violation of these Terms, or the conduct of any minor in your care at the Event.</p>
+        <!-- SECTION 6 -->
+        <h2><span class="sec-num">6</span> Health &amp; Physical Condition</h2>
+        <p>By participating in the Activities, you confirm that:</p>
+        <ul>
+          <li>You are in good physical health and have no medical condition that would make participation unsafe;</li>
+          <li>You have consulted a physician if you have any health concerns prior to participating;</li>
+          <li>You will inform Event staff immediately if you or a minor in your care becomes unwell during the Event;</li>
+          <li>You will not consume alcohol or controlled substances before or during participation in any Activity.</li>
+        </ul>
 
-        <h2>5. Parental &amp; Guardian Responsibility</h2>
-        <p>If you are the parent or legal guardian of a minor attending the Event, you accept these Terms on behalf of that minor and assume full legal responsibility for their participation, supervision, safety, and behaviour at all times during the Event. Children aged 12 and under must be accompanied and supervised by a responsible adult (maximum 4 children per adult) at all times.</p>
+        <!-- SECTION 7 -->
+        <h2><span class="sec-num">7</span> Conduct, Safety Rules &amp; Removal</h2>
+        <p>All Participants must comply with:</p>
+        <ul>
+          <li>All posted safety signage and rules at each attraction;</li>
+          <li>Verbal instructions issued by Event staff and operators at all times;</li>
+          <li>Staff weight, height, and age restrictions for each attraction.</li>
+        </ul>
+        <p>The Organizers reserve the right, in their sole and absolute discretion, to <strong>refuse entry or remove any Participant</strong> from the Event, without refund, for unsafe, disruptive, threatening, or inappropriate behaviour, or for failure to comply with safety requirements. This includes intoxicated individuals who pose a safety risk.</p>
 
-        <h2>6. Conduct &amp; Compliance</h2>
-        <p>All attendees must comply with signage, staff instructions, and safety guidelines posted at the Event. The Organizers reserve the right, in their sole discretion, to remove any attendee from the Event without refund for unsafe, disruptive, or inappropriate conduct.</p>
+        <!-- SECTION 8 -->
+        <h2><span class="sec-num">8</span> Weather, Cancellation &amp; Rescheduling</h2>
+        <p>The Event is conducted outdoors and is weather-dependent. The Organizers, in their sole discretion, may suspend, modify, postpone, or cancel all or any part of the Event due to unsafe weather conditions, force majeure events, governmental directives, or other circumstances beyond their reasonable control.</p>
+        <p>In such circumstances, the Released Parties shall not be liable for any damages, costs, or losses — including travel costs, accommodation, or indirect losses — incurred by Participants as a result. Any refund or rescheduling policy will be communicated exclusively through the Event's official social media channels and website. Ticket purchase terms are subject to Eventbrite's applicable policies.</p>
 
-        <h2>7. Weather &amp; Cancellation</h2>
-        <p>The Event is weather-dependent. In the event of unsafe weather conditions, activities may be suspended or the Event may be canceled or rescheduled at the Organizers' sole discretion. The Released Parties shall not be liable for any losses, damages, expenses, or inconveniences incurred as a result of weather-related modifications or cancellations. Refund and reschedule policies, if applicable, will be communicated via official Event social media channels.</p>
+        <!-- SECTION 9 -->
+        <h2><span class="sec-num">9</span> Occupiers' Liability</h2>
+        <p>The Event is organized in cooperation with the operators of the Garrison Grounds, Halifax, NS. The Organizers, in their capacity as occupiers or co-occupiers of the Event premises for the duration of the Event, owe a duty of care to Participants pursuant to the <em>Occupiers' Liability Act</em>, RSNS 1989, c 322.</p>
+        <p>By attending the Event, you acknowledge and agree that the standard of care owed to you under the Act is <strong>modified by these Terms and Conditions</strong> to the extent expressly authorized by section 4 of that Act, and you accept the reduced standard of care in respect of ordinary negligence claims as described in Section 3 above. Nothing herein shall be read to reduce the Organizers' obligation to avoid reckless disregard for the safety of Participants as required by applicable law.</p>
 
-        <h2>8. Photography &amp; Media</h2>
-        <p>By attending the Event, you grant East Coast Inflate-a-Palooza and its Organizers a royalty-free, worldwide, perpetual license to use photographs, videos, and other media in which you appear, taken during the Event, for marketing, promotional, and social media purposes without further compensation or notice to you.</p>
+        <!-- SECTION 10 -->
+        <h2><span class="sec-num">10</span> Photography, Video &amp; Media</h2>
+        <p>By attending the Event, you grant the Organizers and their authorized representatives a royalty-free, non-exclusive, worldwide, perpetual licence to photograph, film, record, and use your image, likeness, and voice, and that of any minor in your care, in any media format for the purposes of marketing, promotion, advertising, news coverage, and documentation of the Event, without further notice or compensation to you. If you do not wish to be photographed, you must notify Event staff upon entry.</p>
 
-        <h2>9. Limitation of Liability</h2>
-        <p>To the maximum extent permitted by law, the Released Parties' total liability to you for any claims arising from or related to the Event shall be limited to the amount you paid for your ticket(s). In no event shall the Released Parties be liable for any indirect, incidental, special, consequential, or punitive damages.</p>
+        <!-- SECTION 11 -->
+        <h2><span class="sec-num">11</span> Limitation of Liability</h2>
+        <p>To the maximum extent permitted by the laws of Nova Scotia, the total aggregate liability of the Released Parties to any individual Participant for any and all claims arising under or related to these Terms or the Event shall not exceed the face value of the ticket(s) purchased by that Participant. In no event shall any Released Party be liable for any indirect, incidental, special, consequential, exemplary, or punitive damages of any kind, regardless of the legal theory on which such claim is based.</p>
 
-        <h2>10. Governing Law</h2>
-        <p>These Terms and Conditions shall be governed by and construed in accordance with the laws of the <strong>Province of Nova Scotia</strong> and the federal laws of Canada applicable therein. Any disputes arising under these Terms shall be subject to the exclusive jurisdiction of the courts of Nova Scotia.</p>
+        <!-- SECTION 12 -->
+        <h2><span class="sec-num">12</span> Ticket as Evidence of Agreement</h2>
+        <p>Your ticket to the Event serves as evidence that you have been given notice of, and have agreed to, these Terms and Conditions prior to participation. These Terms are displayed at the Event entrance and are published at <strong>ecpalooza.ca/terms</strong>. Participation in any Activity after being given the opportunity to review these Terms constitutes your acceptance of them.</p>
+        <p>The Organizers strongly recommend that physical copies of a signed waiver be obtained at the point of entry for each Participant, particularly for Activities with elevated physical risk, as an additional layer of evidentiary support.</p>
 
-        <h2>11. Severability</h2>
-        <p>If any provision of these Terms is found to be invalid, illegal, or unenforceable, the remaining provisions shall continue in full force and effect.</p>
+        <!-- SECTION 13 -->
+        <h2><span class="sec-num">13</span> Severability</h2>
+        <p>If any provision of these Terms and Conditions is found by a court of competent jurisdiction to be invalid, illegal, or unenforceable in whole or in part, that provision shall be deemed severed from this Agreement, and the remaining provisions shall continue in full force and effect without modification. The invalid provision shall be replaced with a valid provision that most closely reflects the original intent of the parties.</p>
 
-        <h2>12. Agreement</h2>
-        <p>By purchasing a ticket to, registering for, or attending East Coast Inflate-a-Palooza, you confirm that you are 18 years of age or older (or the parent/guardian of a minor attendee), that you have read and understood these Terms and Conditions in their entirety, and that you agree to be bound by them.</p>
+        <!-- SECTION 14 -->
+        <h2><span class="sec-num">14</span> Governing Law &amp; Jurisdiction</h2>
+        <p>These Terms and Conditions shall be governed by and construed exclusively in accordance with the laws of the <strong>Province of Nova Scotia</strong> and the applicable federal laws of Canada. Each party irrevocably submits to the exclusive jurisdiction of the courts of the Province of Nova Scotia for the resolution of any and all disputes arising out of or in connection with these Terms or the Event, and waives any objection to the laying of venue in such courts.</p>
 
-        <div class="warning-box" style="margin-top:32px;">
+        <!-- SECTION 15 -->
+        <h2><span class="sec-num">15</span> Entire Agreement</h2>
+        <p>These Terms and Conditions, together with any additional rules or safety notices posted at the Event, constitute the entire agreement between you and the Organizers with respect to your attendance at the Event, and supersede all prior communications, representations, or understandings, whether written or oral, relating to the same subject matter.</p>
+
+        <!-- SECTION 16 -->
+        <h2><span class="sec-num">16</span> Acknowledgement &amp; Confirmation</h2>
+        <div class="alert-warning">
+          <i class="fas fa-check-circle"></i>
+          <p>By purchasing a ticket to or attending East Coast Inflate-a-Palooza, you confirm that: <strong>(a)</strong> you are 19 years of age or older, or the parent/legal guardian of a minor attendee; <strong>(b)</strong> you have read and fully understood these Terms and Conditions; <strong>(c)</strong> you are not under duress or undue influence; and <strong>(d)</strong> you freely and voluntarily agree to be bound by them.</p>
+        </div>
+
+        <div class="footer-note">
           <p>
-            <i class="fas fa-info-circle" style="margin-right:8px;"></i>
-            For questions regarding these Terms, please contact us at <a href="mailto:info@ecpalooza.ca" style="color:#7B5800;text-decoration:underline;">info@ecpalooza.ca</a>.
+            <i class="fas fa-envelope" style="margin-right:6px;color:var(--blue);"></i>
+            Questions regarding these Terms? Contact us at <a href="mailto:info@ecpalooza.ca" style="color:var(--blue);text-decoration:underline;">info@ecpalooza.ca</a>.
+          </p>
+          <p style="margin-top:8px;">
+            &copy; 2026 <strong>Giant Promotions Limited</strong> &amp; <strong>HRM Mascots &amp; Inflatables (Party Heroes Entertainment Limited)</strong>. All rights reserved.<br>
+            <em>These Terms and Conditions are subject to review and update prior to each Event. The version published at ecpalooza.ca/terms at the time of your attendance shall govern.</em>
           </p>
         </div>
-
-        <p style="margin-top:32px;color:var(--gray-400);font-size:0.875rem;">
-          &copy; 2026 Giant Promotions / HRM Mascots &amp; Giant Promotions. All rights reserved.<br>
-          <em>Last updated: April 2026</em>
-        </p>
       </div>
     </div>
   </section>
@@ -234,7 +419,7 @@
           <a href="mailto:info@ecpalooza.ca" aria-label="Email"><i class="fas fa-envelope"></i></a>
         </div>
         <a href="mailto:info@ecpalooza.ca" class="footer-email">info@ecpalooza.ca</a>
-        <p class="footer-copyright">&copy; 2026 Giant Promotions. All rights reserved. Presented by HRM Mascots &amp; Giant Promotions. | <a href="terms.html" style="color:inherit;text-decoration:underline;opacity:0.7;">Terms &amp; Conditions</a></p>
+        <p class="footer-copyright">&copy; 2026 Giant Promotions Limited &amp; HRM Mascots &amp; Inflatables (Party Heroes Entertainment Limited). All rights reserved. | <a href="terms.html" style="color:inherit;text-decoration:underline;opacity:0.7;">Terms &amp; Conditions</a></p>
       </div>
     </div>
   </footer>
