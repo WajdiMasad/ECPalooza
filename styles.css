@@ -68,32 +68,9 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  cursor: none !important;
 }
 
-/* ============================================================
-   TUBEMAN CURSOR
-   ============================================================ */
-#tubeman-cursor {
-  position: fixed;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-  z-index: 999999;
-  transform: translate(-50%, -50%);
-  will-change: left, top;
-  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.35));
-}
 
-#tubeman-inner {
-  animation: tubemanFloat 1.4s ease-in-out infinite alternate;
-  transform-origin: center bottom;
-}
-
-@keyframes tubemanFloat {
-  from { transform: translateY(0px)  rotate(-4deg) scaleX(0.97); }
-  to   { transform: translateY(-8px) rotate(4deg)  scaleX(1.03); }
-}
 
 html {
   scroll-behavior: smooth;

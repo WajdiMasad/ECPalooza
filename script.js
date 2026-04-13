@@ -2,43 +2,6 @@
    EAST COAST INFLATE-A-PALOOZA — Scripts
    ============================================= */
 
-/* --- Tubeman Cursor --- */
-(function () {
-  const cursor = document.createElement('div');
-  cursor.id = 'tubeman-cursor';
-  cursor.innerHTML = `<div id="tubeman-inner"><img src="images/tubeman-red.png" style="height:72px;width:auto;display:block;"></div>`;
-  document.body.appendChild(cursor);
-
-  let mouseX = window.innerWidth / 2;
-  let mouseY = window.innerHeight / 2;
-  let curX = mouseX;
-  let curY = mouseY;
-  let raf;
-
-  document.addEventListener('mousemove', (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-  });
-
-  // Hide cursor when mouse leaves window
-  document.addEventListener('mouseleave', () => {
-    cursor.style.opacity = '0';
-  });
-  document.addEventListener('mouseenter', () => {
-    cursor.style.opacity = '1';
-  });
-
-  function tick() {
-    // Smooth follow — ease factor controls lag/personality
-    curX += (mouseX - curX) * 0.14;
-    curY += (mouseY - curY) * 0.14;
-    cursor.style.left = curX + 'px';
-    cursor.style.top  = curY + 'px';
-    raf = requestAnimationFrame(tick);
-  }
-  raf = requestAnimationFrame(tick);
-}());
-
 document.addEventListener('DOMContentLoaded', () => {
 
   // --- Sticky Navbar ---
@@ -190,19 +153,39 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // --- Contact Form ---
+  // --- Contact Form (FormSubmit.co) ---
   const contactForm = document.getElementById('contact-form');
   if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
+    contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
-      const btn = contactForm.querySelector('.btn');
+      const btn = contactForm.querySelector('button[type="submit"]');
       const originalText = btn.textContent;
-      btn.textContent = 'Message Sent! ✓';
-      btn.style.background = 'linear-gradient(135deg, #00D2FF, #00A8CC)';
+      btn.textContent = 'Sending...';
+      btn.disabled = true;
+
+      try {
+        const response = await fetch('https://formsubmit.co/ajax/info@ecpalooza.ca', {
+          method: 'POST',
+          headers: { 'Accept': 'application/json' },
+          body: new FormData(contactForm)
+        });
+        const data = await response.json();
+        if (data.success === 'true' || data.success === true) {
+          btn.textContent = 'Message Sent! ✓';
+          btn.style.background = 'linear-gradient(135deg, #00D2FF, #00A8CC)';
+          contactForm.reset();
+        } else {
+          throw new Error('Failed');
+        }
+      } catch {
+        btn.textContent = 'Error — Try Again';
+        btn.style.background = 'linear-gradient(135deg, #FF4757, #FF6B81)';
+      }
+
       setTimeout(() => {
         btn.textContent = originalText;
         btn.style.background = '';
-        contactForm.reset();
+        btn.disabled = false;
       }, 3000);
     });
   }
