@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adult Night | East Coast Inflate-a-Palooza</title>
+  <meta name="description" content="Adult Night at East Coast Inflate-a-Palooza — August 22nd, 2026. 16+ only. Bounce with NO kids, live DJ, live programs & competitions. Book your spot now!">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    .adult-night-hero {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 40%, #6a0572 80%, #a01080 100%);
+      padding: 160px 0 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .adult-night-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 20% 50%, rgba(233,30,99,0.25) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 50%, rgba(156,39,176,0.25) 0%, transparent 60%);
+    }
+
+    .adult-night-hero .hero-badge {
+      background: rgba(233,30,99,0.2);
+      border: 1px solid rgba(233,30,99,0.5);
+      color: #f48fb1;
+      display: inline-block;
+      padding: 8px 20px;
+      border-radius: 50px;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+    }
+
+    .adult-night-hero h1 {
+      color: #fff;
+      margin-bottom: 16px;
+    }
+
+    .adult-night-hero h1 span {
+      background: linear-gradient(135deg, #f48fb1, #ce93d8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .adult-night-hero p {
+      color: rgba(255,255,255,0.8);
+      font-size: 1.15rem;
+      margin-bottom: 8px;
+    }
+
+    .adult-night-hero .event-date {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: #ce93d8;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1.3rem;
+      margin: 16px 0 32px;
+    }
+
+    /* Floating lights effect */
+    .light {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.15;
+      animation: floatLight 6s ease-in-out infinite;
+      pointer-events: none;
+    }
+    .light-1 { width: 300px; height: 300px; background: #e91e63; top: -80px; left: -80px; animation-delay: 0s; }
+    .light-2 { width: 400px; height: 400px; background: #9c27b0; bottom: -120px; right: -120px; animation-delay: 2s; }
+    .light-3 { width: 200px; height: 200px; background: #ff4081; top: 50%; left: 50%; animation-delay: 4s; }
+
+    @keyframes floatLight {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      50%       { transform: translate(20px, -20px) scale(1.05); }
+    }
+
+    /* Perks grid */
+    .perks-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+      max-width: 900px;
+      margin: 0 auto 60px;
+    }
+
+    .perk-card {
+      background: linear-gradient(135deg, #1a1a2e, #16213e);
+      border: 1px solid rgba(233,30,99,0.3);
+      border-radius: var(--border-radius);
+      padding: 32px 24px;
+      text-align: center;
+      transition: var(--transition);
+    }
+
+    .perk-card:hover {
+      border-color: rgba(233,30,99,0.7);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(233,30,99,0.2);
+    }
+
+    .perk-icon {
+      font-size: 2.2rem;
+      margin-bottom: 14px;
+      display: block;
+    }
+
+    .perk-card h3 {
+      color: #f48fb1;
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+    }
+
+    .perk-card p {
+      color: rgba(255,255,255,0.65);
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    .adult-night-section {
+      background: linear-gradient(180deg, #0f0f1a 0%, #1a1a2e 100%);
+      padding: var(--section-padding);
+    }
+
+    .adult-night-section .section-subtitle {
+      color: #f48fb1;
+    }
+
+    .adult-night-section .section-title {
+      color: #fff;
+    }
+
+    .eb-widget-wrapper.dark {
+      background: rgba(255,255,255,0.04);
+      border-color: rgba(233,30,99,0.3);
+    }
+
+    .eb-widget-wrapper.dark h3 {
+      color: #fff;
+    }
+
+    .eb-widget-wrapper.dark .section-subtitle {
+      color: #f48fb1;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav class="navbar scrolled" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <img src="images/logo.png" alt="East Coast Inflate-a-Palooza Logo">
+        <span>EC PALOOZA</span>
+      </a>
+      <div class="nav-links" id="nav-links">
+        <a href="index.html">Home</a>
+        <a href="index.html#attractions">Attractions</a>
+        <a href="tickets.html">Tickets</a>
+        <a href="vendors.html">Vendors</a>
+        <a href="faq.html">FAQ</a>
+        <a href="index.html#contact">Contact</a>
+        <a href="tickets.html" class="btn btn-primary">Buy Tickets</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="adult-night-hero">
+    <div class="light light-1"></div>
+    <div class="light light-2"></div>
+    <div class="light light-3"></div>
+    <div class="container" style="position:relative;z-index:1;">
+      <div class="hero-badge">16+ Only &nbsp;·&nbsp; August 22nd, 2026</div>
+      <h1>Adult <span>Night</span></h1>
+      <p>The inflatables. The energy. Zero kids.</p>
+      <div class="event-date">
+        <i class="fas fa-calendar-alt"></i> Friday, August 22nd, 2026
+        &nbsp;|&nbsp;
+        <i class="fas fa-map-marker-alt"></i> Garrison Grounds, Halifax, NS
+      </div>
+      <a href="#book" class="btn btn-primary" style="font-size:1.1rem; padding: 16px 44px; background: linear-gradient(135deg,#e91e63,#9c27b0); border:none;">
+        🎟️ Book Your Spot
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== PERKS ===== -->
+  <section class="adult-night-section">
+    <div class="container">
+      <p class="section-subtitle animate-on-scroll" style="text-align:center;">What's Included</p>
+      <h2 class="section-title animate-on-scroll" style="text-align:center; margin-bottom:48px;">One Night. Full Access. No Limits.</h2>
+
+      <div class="perks-grid">
+        <div class="perk-card animate-on-scroll">
+          <span class="perk-icon">🎪</span>
+          <h3>All Inflatables</h3>
+          <p>Unlimited access to every inflatable, ride, obstacle course &amp; game on site.</p>
+        </div>
+        <div class="perk-card animate-on-scroll">
+          <span class="perk-icon">🎵</span>
+          <h3>Live DJ</h3>
+          <p>A DJ keeping the energy up all night long with the best tracks.</p>
+        </div>
+        <div class="perk-card animate-on-scroll">
+          <span class="perk-icon">🏆</span>
+          <h3>Live Programs &amp; Competitions</h3>
+          <p>Interactive competitions and live programming throughout the evening.</p>
+        </div>
+        <div class="perk-card animate-on-scroll">
+          <span class="perk-icon">🚫👶</span>
+          <h3>Adults Only</h3>
+          <p>16+ strictly enforced. Bounce around freely without the little ones.</p>
+        </div>
+        <div class="perk-card animate-on-scroll">
+          <span class="perk-icon">⏱️</span>
+          <h3>3-Hour Session</h3>
+          <p>An epic 3-hour adventure session — make every minute count.</p>
+        </div>
+        <div class="perk-card animate-on-scroll">
+          <span class="perk-icon">🍔</span>
+          <h3>Food Vendors</h3>
+          <p>Food vendors on site to keep you fuelled through the night.</p>
+        </div>
+      </div>
+
+      <!-- ===== EVENTBRITE WIDGET ===== -->
+      <div class="eb-widget-wrapper dark animate-on-scroll" id="book">
+        <p class="section-subtitle" style="text-align:center; margin-bottom: 8px;">Secure Checkout</p>
+        <h3 style="text-align:center; font-size:1.6rem; margin-bottom: 24px;">Book Your Adult Night Spot</h3>
+        <div id="eventbrite-widget-container-1990115616381"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <img src="images/logo.png" alt="EC Palooza" class="footer-logo">
+          East Coast <span>Inflate-a-Palooza</span>
+        </div>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/ecpalooza" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.facebook.com/p/East-Coast-Inflate-a-Palooza-61561594187556/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="mailto:info@ecpalooza.ca" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        </div>
+        <a href="mailto:info@ecpalooza.ca" class="footer-email">info@ecpalooza.ca</a>
+        <p class="footer-copyright">© 2026 Giant Promotions. All rights reserved. Presented by HRM Mascots &amp; Giant Promotions. | <a href="terms.html" style="color:inherit;text-decoration:underline;opacity:0.7;">Terms &amp; Conditions</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    (function() {
+      var containerId = 'eventbrite-widget-container-1990115616381';
+      var fallbackUrl = 'https://www.eventbrite.ca/e/east-coast-inflate-a-palooza-x-stampede-tickets-1689122483819?aff=oddtdtcreator';
+
+      function showFallback() {
+        var container = document.getElementById(containerId);
+        if (!container) return;
+        container.innerHTML =
+          '<div style="text-align:center;padding:32px 16px;">' +
+            '<p style="color:rgba(255,255,255,0.6);margin-bottom:20px;font-size:1rem;">Click below to purchase your Adult Night ticket securely on Eventbrite.</p>' +
+            '<a href="' + fallbackUrl + '" target="_blank" class="btn btn-primary" style="font-size:1.1rem;padding:16px 40px;background:linear-gradient(135deg,#e91e63,#9c27b0);border:none;">🎟️ Book on Eventbrite</a>' +
+          '</div>';
+      }
+
+      var script = document.createElement('script');
+      script.src = 'https://www.eventbrite.ca/static/widgets/eb_widgets.js';
+      script.onload = function() {
+        try {
+          window.EBWidgets.createWidget({
+            widgetType: 'checkout',
+            eventId: '1990115616381',
+            iframeContainerId: containerId,
+            iframeContainerHeight: 425,
+            onOrderComplete: function() { console.log('Order complete!'); }
+          });
+        } catch(e) {
+          showFallback();
+        }
+      };
+      script.onerror = function() { showFallback(); };
+      document.body.appendChild(script);
+    })();
+  </script>
+</body>
+</html>
