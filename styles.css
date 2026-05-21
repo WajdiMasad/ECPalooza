@@ -857,12 +857,12 @@ h4 { font-size: 1.125rem; font-weight: 600; }
 }
 
 .eb-widget-wrapper {
-  max-width: 900px;
+  width: 100%;
   margin: 52px auto 0;
   background: var(--gray-50);
   border: 2px solid var(--gray-200);
   border-radius: var(--border-radius-lg);
-  padding: 40px 36px 32px;
+  padding: 40px 16px 32px;
 }
 
 .tickets-grid {
