@@ -419,6 +419,23 @@ h4 { font-size: 1.125rem; font-weight: 600; }
   color: var(--white);
 }
 
+.hero-video {
+  margin: 40px auto 0;
+  max-width: 900px;
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.4);
+  border: 2px solid rgba(255,255,255,0.15);
+  position: relative;
+  z-index: 2;
+}
+
+.hero-video video {
+  width: 100%;
+  display: block;
+}
+
 .hero-badge {
   display: inline-flex;
   align-items: center;
