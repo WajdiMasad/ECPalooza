@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buy Tickets | East Coast Inflate-a-Palooza</title>
+  <meta name="description" content="Get your tickets for East Coast Inflate-a-Palooza — Atlantic Canada's Largest Inflatable Extravaganza! General Admission, Play Pass, Adult Nights & VIP available.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav class="navbar scrolled" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <img src="images/logo.png" alt="East Coast Inflate-a-Palooza Logo">
+        <span>EC PALOOZA</span>
+      </a>
+      <div class="nav-links" id="nav-links">
+        <a href="index.html">Home</a>
+        <a href="index.html#attractions">Attractions</a>
+        <a href="tickets.html" style="color: var(--blue);">Tickets</a>
+        <a href="vendors.html">Vendors</a>
+        <a href="faq.html">FAQ</a>
+        <a href="index.html#contact">Contact</a>
+        <a href="tickets.html" class="btn btn-primary">Buy Tickets</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="faq-hero">
+    <div class="container">
+      <p class="section-subtitle">August 21st – 23rd, 2026</p>
+      <h1>Get Your Tickets</h1>
+      <p style="color: rgba(255,255,255,0.85); margin-top: 16px; font-size: 1.1rem;">Garrison Grounds, Halifax, NS — Choose the pass that's right for you</p>
+    </div>
+  </section>
+
+  <!-- ===== TICKET TIERS ===== -->
+  <section class="tickets" id="tickets" style="padding-top: 60px; padding-bottom: 20px;">
+    <div class="container">
+      <p class="section-subtitle animate-on-scroll" style="text-align:center;">Choose Your Pass</p>
+      <h2 class="section-title animate-on-scroll" style="text-align:center;">Tickets &amp; Pricing</h2>
+      <div class="tickets-grid">
+
+        <div class="ticket-card general animate-on-scroll">
+          <span class="ticket-badge">Entry Level</span>
+          <h3>General Admission</h3>
+          <div class="ticket-price">$10</div>
+          <p class="ticket-price-label">Entry to the event grounds</p>
+          <ul class="ticket-features">
+            <li><span class="check">✓</span> Access to 30+ inflatable displays</li>
+            <li><span class="check">✓</span> Accessible carnival games tent</li>
+            <li><span class="check">✓</span> Local food vendors access</li>
+            <li><span class="check">✓</span> Giant inflatable photo ops</li>
+            <li><span class="check">✓</span> Live entertainment</li>
+          </ul>
+        </div>
+
+        <div class="ticket-card playpass animate-on-scroll">
+          <span class="ticket-badge">Best Value</span>
+          <h3>Play Pass</h3>
+          <div class="ticket-price">$25</div>
+          <p class="ticket-price-label">Unlimited bouncing bracelet</p>
+          <ul class="ticket-features">
+            <li><span class="check">✓</span> Everything in General Admission</li>
+            <li><span class="check">✓</span> All inflatable games &amp; slides</li>
+            <li><span class="check">✓</span> Mechanical rides access</li>
+            <li><span class="check">✓</span> Obstacle courses</li>
+            <li><span class="check">✓</span> Unlimited play for your session</li>
+          </ul>
+        </div>
+
+        <div class="ticket-card adultnight animate-on-scroll">
+          <span class="ticket-badge">16+ Only</span>
+          <h3>Adult Nights</h3>
+          <div class="ticket-price">$35</div>
+          <p class="ticket-price-label">The ultimate inflatable party</p>
+          <ul class="ticket-features">
+            <li><span class="check">—</span> August 22nd, 2026</li>
+            <li><span class="check">✓</span> Bounce around with NO kids</li>
+            <li><span class="check">✓</span> Live DJ all night</li>
+            <li><span class="check">✓</span> Live programs &amp; competitions</li>
+            <li><span class="check">✓</span> Unlimited access to all inflatables</li>
+            <li><span class="check">✓</span> 3-hour epic adventure session</li>
+          </ul>
+        </div>
+
+        <div class="ticket-card vip animate-on-scroll">
+          <span class="ticket-badge">👑 VIP</span>
+          <h3>VIP Pass</h3>
+          <div class="ticket-price">$100</div>
+          <p class="ticket-price-label">Full weekend, any day, any session</p>
+          <ul class="ticket-features">
+            <li><span class="check">✓</span> Entry all 3 days (Aug 21–23)</li>
+            <li><span class="check">✓</span> Any session — morning or evening</li>
+            <li><span class="check">✓</span> Everything in Play Pass included</li>
+            <li><span class="check">✓</span> All inflatables, rides &amp; games</li>
+            <li><span class="check">✓</span> No re-entry restrictions</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div style="text-align: center; margin-top: 24px;">
+        <span class="free-badge"><i class="fas fa-gift"></i> Children under the age of 2 are free!</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EVENTBRITE WIDGET ===== -->
+  <section style="padding: 20px 0 80px;">
+    <div class="container">
+      <div class="eb-widget-wrapper animate-on-scroll">
+        <p class="section-subtitle" style="text-align:center; margin-bottom: 8px;">Secure Checkout</p>
+        <h3 style="text-align:center; font-size:1.6rem; margin-bottom: 24px; color: var(--gray-800);">Book Your Tickets Below</h3>
+        <div id="eventbrite-widget-container-1987292782208"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <img src="images/logo.png" alt="EC Palooza" class="footer-logo">
+          East Coast <span>Inflate-a-Palooza</span>
+        </div>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/ecpalooza" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.facebook.com/p/East-Coast-Inflate-a-Palooza-61561594187556/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="mailto:info@ecpalooza.ca" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        </div>
+        <a href="mailto:info@ecpalooza.ca" class="footer-email">info@ecpalooza.ca</a>
+        <p class="footer-copyright">© 2026 Giant Promotions. All rights reserved. Presented by HRM Mascots &amp; Giant Promotions. | <a href="terms.html" style="color:inherit;text-decoration:underline;opacity:0.7;">Terms &amp; Conditions</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    (function() {
+      var containerId = 'eventbrite-widget-container-1987292782208';
+      var fallbackUrl = 'https://www.eventbrite.ca/e/east-coast-inflate-a-palooza-x-stampede-tickets-1689122483819?aff=oddtdtcreator';
+
+      function showFallback() {
+        var container = document.getElementById(containerId);
+        if (!container) return;
+        container.innerHTML =
+          '<div style="text-align:center;padding:32px 16px;">' +
+            '<p style="color:var(--gray-600);margin-bottom:20px;font-size:1rem;">Click below to purchase tickets securely on Eventbrite.</p>' +
+            '<a href="' + fallbackUrl + '" target="_blank" class="btn btn-primary" style="font-size:1.1rem;padding:16px 40px;">🎟️ Buy Tickets on Eventbrite</a>' +
+          '</div>';
+      }
+
+      var script = document.createElement('script');
+      script.src = 'https://www.eventbrite.ca/static/widgets/eb_widgets.js';
+      script.onload = function() {
+        try {
+          window.EBWidgets.createWidget({
+            widgetType: 'checkout',
+            eventId: '1987292782208',
+            iframeContainerId: containerId,
+            iframeContainerHeight: 625,
+            onOrderComplete: function() { console.log('Order complete!'); }
+          });
+        } catch(e) {
+          showFallback();
+        }
+      };
+      script.onerror = function() { showFallback(); };
+      document.body.appendChild(script);
+    })();
+  </script>
+</body>
+</html>
