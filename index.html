@@ -41,15 +41,17 @@
 
   <!-- ===== HERO ===== -->
   <section class="hero" id="hero">
-    <div class="hero-bg">
-      <div class="orb orb-1"></div>
-      <div class="orb orb-2"></div>
-      <div class="orb orb-3"></div>
-    </div>
+    <!-- Background video -->
+    <video class="hero-bg-video"
+      src="https://video.wixstatic.com/video/29fe04_990784436aa748ffa634753ae066ff4d/1080p/mp4/file.mp4"
+      autoplay loop muted playsinline preload="auto"
+      poster="images/hero-bg.jpg"
+      aria-hidden="true">
+    </video>
+    <!-- Dark overlay -->
+    <div class="hero-overlay"></div>
     <div class="confetti-container"></div>
     <!-- Decorative tube men -->
-    <img src="images/tubeman-red.png" alt="" class="hero-tubeman hero-tubeman-left" aria-hidden="true">
-    <img src="images/tubeman-yellow.png" alt="" class="hero-tubeman hero-tubeman-right" aria-hidden="true">
     <div class="hero-content">
       <div class="hero-badge">We're Coming Back!</div>
       <h1>Atlantic Canada's Largest <span class="highlight">Inflatable Extravaganza!</span></h1>
@@ -58,18 +60,6 @@
       <div class="hero-buttons">
         <a href="tickets.html" class="btn btn-primary">Buy Tickets</a>
         <a href="#about" class="btn btn-secondary">Learn More</a>
-      </div>
-      <div class="hero-video animate-on-scroll">
-        <video
-          src="https://video.wixstatic.com/video/29fe04_990784436aa748ffa634753ae066ff4d/1080p/mp4/file.mp4"
-          autoplay
-          loop
-          muted
-          playsinline
-          preload="auto"
-          poster="images/hero-bg.jpg"
-          aria-label="East Coast Inflate-a-Palooza event highlight video">
-        </video>
       </div>
     </div>
     <div class="hero-scroll">
